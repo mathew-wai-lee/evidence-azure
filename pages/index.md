@@ -7,42 +7,27 @@ title: Welcome to Evidence
   This page can be found in your project at `/pages/index.md`. Make a change to the markdown file and save it to see the change take effect in your browser.
 </Details>
 
-```sql categories
-  select
-      category
-  from needful_things.orders
-  group by category
-```
-
-<Dropdown data={categories} name=category value=category>
-    <DropdownOption value="%" valueLabel="All Categories"/>
+<Dropdown name=species>
+    <DropdownOption value=% valueLabel="All Species"/>
+    <DropdownOption value=setosa/>
+    <DropdownOption value=versicolor/>
+    <DropdownOption value=virginica/>
 </Dropdown>
 
-<Dropdown name=year>
-    <DropdownOption value=% valueLabel="All Years"/>
-    <DropdownOption value=2019/>
-    <DropdownOption value=2020/>
-    <DropdownOption value=2021/>
-</Dropdown>
 
-```sql orders_by_category
-  select 
-      date_trunc('month', order_datetime) as month,
-      sum(sales) as sales_usd,
-      category
-  from needful_things.orders
-  where category like '${inputs.category.value}'
-  and date_part('year', order_datetime) like '${inputs.year.value}'
-  group by all
-  order by sales_usd desc
+
+
+```sql iris
+SELECT * FROM Iris.iris
+where species like '${inputs.species.value}'
 ```
 
-<BarChart
-    data={orders_by_category}
-    title="Sales by Month, {inputs.category.label}"
-    x=month
-    y=sales_usd
-    series=category
+<ScatterPlot
+    data={iris}
+    title="Iris"
+    x=sepal_length
+    y=sepal_width
+    series=species
 />
 
 ## What's Next?
