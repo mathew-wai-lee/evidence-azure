@@ -1,1 +1,1 @@
-{"queries":[{"id":"iris","compiledQueryString":"SELECT * FROM Iris.iris\nwhere species like '${inputs.species.value}'","inputQueryString":"SELECT * FROM Iris.iris\nwhere species like '${inputs.species.value}'","compiled":false,"inline":true}]}
+{"queries":[{"id":"iris","compiledQueryString":"SELECT * FROM iris\nwhere species like '${inputs.species.value}'","inputQueryString":"SELECT * FROM iris\nwhere species like '${inputs.species.value}'","compiled":false,"inline":true}]}
