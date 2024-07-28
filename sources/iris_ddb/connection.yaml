@@ -1,0 +1,5 @@
+# This file was automatically generated
+name: iris_ddb
+type: duckdb
+options:
+  filename: iris.duckdb

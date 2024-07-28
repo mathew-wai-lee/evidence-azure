@@ -18,7 +18,7 @@ title: Welcome to Evidence
 
 
 ```sql iris
-SELECT * FROM Iris.iris
+SELECT * FROM iris
 where species like '${inputs.species.value}'
 ```
 
